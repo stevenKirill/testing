@@ -1,1 +1,0 @@
-npm install --save-dev @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript babel-jest
