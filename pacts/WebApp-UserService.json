@@ -1,0 +1,55 @@
+{
+  "consumer": {
+    "name": "WebApp"
+  },
+  "interactions": [
+    {
+      "description": "[GET] /user/${userId}",
+      "providerState": "[GET] /user/${userId} success",
+      "request": {
+        "headers": {
+          "Accept": "application/json"
+        },
+        "method": "GET",
+        "path": "/user/123"
+      },
+      "response": {
+        "body": {
+          "email": "iloveorange",
+          "id": 13,
+          "name": "iloveorange"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body.email": {
+            "match": "type"
+          },
+          "$.body.id": {
+            "match": "type"
+          },
+          "$.body.name": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "15.0.1"
+    },
+    "pactRust": {
+      "ffi": "0.4.22",
+      "models": "1.2.3"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "UserService"
+  }
+}

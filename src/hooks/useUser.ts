@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
+import { apiClient } from '../lib/api/axios'
 
 interface User {
   id: number
@@ -7,8 +7,8 @@ interface User {
   email: string
 }
 
-const fetchUser = async (userId: number): Promise<User> => {
-  const { data } = await axios.get(`https://api.example.com/users/${userId}`)
+export const fetchUser = async (userId: number): Promise<User> => {
+  const { data } = await apiClient.get(`/user/${userId}`)
   return data
 }
 

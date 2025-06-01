@@ -48,7 +48,7 @@ describe('useUser', () => {
 
     // Проверяем полученные данные
     expect(result.current.data).toEqual(mockUser)
-    expect(mockedAxios.get).toHaveBeenCalledWith('https://api.example.com/users/1')
+    expect(mockedAxios.get).toHaveBeenCalledWith('http://localhost:1234/user/1')
   })
 
   it('обрабатывает ошибку при неудачном запросе', async () => {
