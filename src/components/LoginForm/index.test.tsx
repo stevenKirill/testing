@@ -5,11 +5,6 @@ import { jest } from "@jest/globals";
 
 jest.mock("../../lib/services/AuthService");
 
-// правильный паттерн тестирования асинхронных операций:
-// Выполнить действие (клик по кнопке)
-// Дождаться изменений в DOM (await findBy...)
-// Проверить результат (expect)
-
 // В React Testing Library есть три основных метода поиска элементов:
 // getBy... - синхронный поиск, ошибка если элемент не найден
 // queryBy... - синхронный поиск, возвращает null если элемент не найден
@@ -18,9 +13,7 @@ jest.mock("../../lib/services/AuthService");
 describe("LoginForm Integration Test", () => {
   // кейс ошибки
   it("shows error message when login fails", async () => {
-    (
-      AuthService.login as jest.MockedFunction<typeof AuthService.login>
-    ).mockRejectedValue(new Error("Auth failed"));
+    (AuthService.login as jest.MockedFunction<typeof AuthService.login>).mockRejectedValue(new Error("Auth failed"));
 
     render(<LoginForm />);
 

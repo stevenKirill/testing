@@ -14,6 +14,7 @@ export default {
   // Настройки для обработки модулей
   moduleNameMapper: {
     // Обработка CSS модулей (если используете)
+    // jest.mock('./styles.module.css', () => require('identity-obj-proxy'));
     "\\.(css|less|sass|scss)$": "identity-obj-proxy",
 
     // Обработка статических файлов
@@ -26,11 +27,6 @@ export default {
     // console.log(logo); // выведет "test-file-stub"
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/__mocks__/fileMock.js",
-  },
-
-  // Настройки для трансформации кода
-  transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
   },
 
   // Глобальные настройки
