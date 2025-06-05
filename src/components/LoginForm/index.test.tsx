@@ -5,11 +5,6 @@ import { jest } from "@jest/globals";
 
 jest.mock("../../lib/services/AuthService");
 
-// В React Testing Library есть три основных метода поиска элементов:
-// getBy... - синхронный поиск, ошибка если элемент не найден
-// queryBy... - синхронный поиск, возвращает null если элемент не найден
-// findBy... - асинхронный поиск, ждёт появления элемента
-
 describe("LoginForm Integration Test", () => {
   // кейс ошибки
   it("shows error message when login fails", async () => {
